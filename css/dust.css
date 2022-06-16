@@ -9,7 +9,7 @@ section.absol
     top:0;
     left:calc(50% - 40vw);
     justify-content: center;
-    align-items: top;
+    align-items: start;
     overflow-x:hidden;
     z-index:0
 }
