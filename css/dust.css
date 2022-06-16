@@ -1,12 +1,10 @@
-@charset "utf-8";
 
-
-:root
+        :root
 {
---dust-color: rgb(223, 153, 255);
---dust-glow-color: rgb(255, 149, 167);
---logo-color: rgb(255,255,255);
---logo-glow-color: rgba(233, 144, 255, 0.4);
+--dust-color: rgb(255, 161, 242);
+--dust-glow-color: rgb(253, 207, 238);
+--logo-color: rgb(255, 238, 255);
+--logo-glow-color: rgba(255, 116, 248, 0.253);
 --bg-color1: rgb(0,0,0);
 --bg-color2: rgb(40,10,10);
 }
@@ -17,20 +15,6 @@
             box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-body
-{
-    overflow: hidden;
-
-    width: 100vw;
-    height: 100vh;
-
-            background: var(--bg-color2);
-            background: radial-gradient(circle, var(--bg-color2) 0%, var(--bg-color1) 100%);
-
-    -webkit-background: radial-gradient(circle, var(--bg-color2) 0%, var(--bg-color1) 100%);
-       -moz-background: radial-gradient(circle, var(--bg-color2) 0%, var(--bg-color1) 100%);
-         -o-background: radial-gradient(circle, var(--bg-color2) 0%, var(--bg-color1) 100%);
 }
 section
 {
@@ -57,6 +41,78 @@ section
             stroke: none !important;
     -webkit-fill: var(--logo-color) !important;
             fill: var(--logo-color) !important;
+}
+
+/* logo */
+#typo
+{
+    z-index: 2;
+
+    width: 100%;
+    height: 100%;
+    margin: 0 1% !important;
+
+    animation: font-animate 1.15s .5s linear forwards;
+
+    opacity: 0;
+
+    -webkit-fill: var(--logo-color);
+            fill: var(--logo-color);
+    -webkit-stroke: var(--logo-color);
+            stroke: var(--logo-color);
+    -webkit-stroke-width: 2;
+            stroke-width: 2;
+            filter: drop-shadow(3px 0px 7px var(--logo-glow-color))
+    drop-shadow(-3px 0px 7px var(--logo-glow-color))
+    drop-shadow(0px 4px 7px var(--logo-glow-color));
+    -webkit-filter: drop-shadow(3px 0px 7px var(--logo-glow-color))
+    drop-shadow(-3px 0px 7px var(--logo-glow-color))
+    drop-shadow(0px 4px 7px var(--logo-glow-color));
+}
+#plant-left,
+#plant-right
+{
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-fill: none;
+            fill: none;
+    -webkit-stroke: var(--logo-color);
+            stroke: var(--logo-color);
+    -webkit-stroke-width: 10;
+            stroke-width: 10;
+    -webkit-stroke-linecap: round;
+            stroke-linecap: round;
+    -webkit-stroke-linejoin: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(3px 0px 7px var(--logo-glow-color))
+    drop-shadow(-3px 0px 7px var(--logo-glow-color))
+    drop-shadow(0px 4px 7px var(--logo-glow-color));
+    -webkit-filter: drop-shadow(3px 0px 7px var(--logo-glow-color))
+    drop-shadow(-3px 0px 7px var(--logo-glow-color))
+    drop-shadow(0px 4px 7px var(--logo-glow-color));
+}
+#plant-left
+{
+    margin-left: 5% !important;
+
+    -webkit-transform: rotate(-35deg) scaleX(-1); /* ✑ mirror rotation */
+       -moz-transform: rotate(-35deg) scaleX(-1);
+        -ms-transform: rotate(-35deg) scaleX(-1);
+         -o-transform: rotate(-35deg) scaleX(-1);
+            transform: rotate(-35deg) scaleX(-1);
+}
+#plant-right
+{
+    margin-right: 5% !important;
+
+    -webkit-transform: rotate(35deg);
+       -moz-transform: rotate(35deg);
+        -ms-transform: rotate(35deg);
+         -o-transform: rotate(35deg);
+            transform: rotate(35deg);
 }
 
 /* bees */
@@ -149,8 +205,159 @@ section
     transform-box: fill-box;
 }
 
+/* stems */
+.stem1
+{
+    visibility: hidden;
+
+    -webkit-animation: stretch 4s 1s ease-in-out forwards;
+            animation: stretch 4s 1s ease-in-out forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+}
+.stem2
+{
+    visibility: hidden;
+
+    -webkit-animation: stretch-secondary 4s 2.35s ease-in-out forwards;
+            animation: stretch-secondary 4s 2.35s ease-in-out forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+}
+.stem3
+{
+    visibility: hidden;
+
+    animation: stretch-secondary 4s 2.8s ease-in-out forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+}
+.stem4
+{
+    visibility: hidden;
+
+    animation: stretch-secondary 4s 1.8s ease-in-out forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+}
+
+/* leafs */
+.leaf1,
+.leaf2
+{
+    animation: bloom 1s 1.8s linear forwards;
+}
+.leaf3,
+.leaf4
+{
+    animation: bloom 1s 2.35s linear forwards;
+}
+.leaf5,
+.leaf6
+{
+    animation: bloom 1s 2.8s linear forwards;
+}
+
+/* buds */
+.bud1
+{
+    -webkit-transform-origin: 40% 20%;
+            transform-origin: 40% 20%;
+    -webkit-animation: popping .5s 3.2s cubic-bezier(1,0,0,1) forwards;
+       -moz-animation: popping .5s 3.2s cubic-bezier(1,0,0,1) forwards;
+        -ms-animation: popping .5s 3.2s cubic-bezier(1,0,0,1) forwards;
+         -o-animation: popping .5s 3.2s cubic-bezier(1,0,0,1) forwards;
+            animation: popping .5s 3.2s cubic-bezier(1,0,0,1) forwards;
+
+    transform-box: fill-box;
+}
+.bud2
+{
+    -webkit-transform-origin: 80% 80%;
+            transform-origin: 80% 80%;
+    -webkit-animation: popping .5s 3.9s cubic-bezier(1,0,0,1) forwards;
+       -moz-animation: popping .5s 3.9s cubic-bezier(1,0,0,1) forwards;
+        -ms-animation: popping .5s 3.9s cubic-bezier(1,0,0,1) forwards;
+         -o-animation: popping .5s 3.9s cubic-bezier(1,0,0,1) forwards;
+            animation: popping .5s 3.9s cubic-bezier(1,0,0,1) forwards;
+
+    transform-box: fill-box;
+}
+.bud3
+{
+    -webkit-transform-origin: 60% 20%;
+            transform-origin: 60% 20%;
+    -webkit-animation: popping .5s 4.2s cubic-bezier(1,0,0,1) forwards;
+       -moz-animation: popping .5s 4.2s cubic-bezier(1,0,0,1) forwards;
+        -ms-animation: popping .5s 4.2s cubic-bezier(1,0,0,1) forwards;
+         -o-animation: popping .5s 4.2s cubic-bezier(1,0,0,1) forwards;
+            animation: popping .5s 4.2s cubic-bezier(1,0,0,1) forwards;
+
+    transform-box: fill-box;
+}
+.bud4
+{
+    -webkit-transform-origin: 15% 35%;
+            transform-origin: 15% 35%;
+    -webkit-animation: popping .5s 3.5s cubic-bezier(1,0,0,1) forwards;
+       -moz-animation: popping .5s 3.5s cubic-bezier(1,0,0,1) forwards;
+        -ms-animation: popping .5s 3.5s cubic-bezier(1,0,0,1) forwards;
+         -o-animation: popping .5s 3.5s cubic-bezier(1,0,0,1) forwards;
+            animation: popping .5s 3.5s cubic-bezier(1,0,0,1) forwards;
+
+    transform-box: fill-box;
+}
 
 
+/* flowers */
+.flower1
+{
+    visibility: hidden;
+
+    animation: bloom 1s 4s linear forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+    -webkit-stroke-width: 5 !important;
+            stroke-width: 5 !important;
+}
+.flower2
+{
+    visibility: hidden;
+
+    animation: bloom 1s 4.4s linear forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+    -webkit-stroke-width: 5 !important;
+            stroke-width: 5 !important;
+}
+.flower3
+{
+    visibility: hidden;
+
+    animation: bloom 1s 4.7s linear forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+    -webkit-stroke-width: 5 !important;
+            stroke-width: 5 !important;
+}
+.flower4
+{
+    visibility: hidden;
+
+    animation: bloom 1s 3.7s linear forwards;
+
+    -webkit-stroke-dasharray: 200%;
+            stroke-dasharray: 200%;
+    -webkit-stroke-width: 5 !important;
+            stroke-width: 5 !important;
+}
 
 /* dust */
 article#dust-wrap
@@ -1064,6 +1271,13 @@ div.dust2:nth-of-type(88)
 ▀▄▀▄▀▄▀▄▀▄▀▄ ANIMATIONS ▀▄▀▄▀▄▀▄▀▄▀▄
 */
 
+@keyframes bloom
+{
+    to
+    {
+        visibility: visible;
+    }
+}
 @keyframes dust-on
 {
     to
@@ -1372,19 +1586,3 @@ div.dust2:nth-of-type(88)
     }
 }
 
-/* media queries */
-@media only screen and (orientation: landscape)
-{
-    section
-    {
-        width: 75%;
-        height: 75%;
-    }
-    body
-    {
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
-    }
-}
