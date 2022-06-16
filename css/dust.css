@@ -4,9 +4,10 @@ section.absol
 {
     display: flex;
     position:absolute;
-    width: 100%;
+    width: 80%;
     height: 100%;
-
+    top:0;
+    let:calc(50% - 40vw)
     justify-content: center;
     align-items: center;
 }
