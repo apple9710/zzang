@@ -1,4 +1,4 @@
-
+@charset "utf-8";
         :root
 {
 --dust-color: rgb(255, 161, 242);
@@ -1585,4 +1585,3 @@ div.dust2:nth-of-type(88)
         stroke-dashoffset: 0;
     }
 }
-
