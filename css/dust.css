@@ -5,12 +5,13 @@ section.absol
     display: flex;
     position:absolute;
     width: 80%;
-    height: 100%;
+    height: 20vh;
     top:0;
     left:calc(50% - 40vw);
     justify-content: center;
-    align-items: center;
+    align-items: top;
     overflow-x:hidden;
+    z-index:1
 }
 
 /* rules */
